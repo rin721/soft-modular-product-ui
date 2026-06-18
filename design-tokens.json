@@ -1,0 +1,551 @@
+{
+  "meta": {
+    "name": "playful-video-platform-ui",
+    "version": "1.0.0",
+    "purpose": "Reusable design tokens for a light, playful, media-community UI language.",
+    "origin": "Distilled from observed screenshots, SSR HTML, and CSS of https://kirakira.moe without copying assets.",
+    "uncertaintyPolicy": "Tokens marked inferred or medium/low confidence should be validated before strict implementation."
+  },
+  "color": {
+    "accent": [
+      {
+        "name": "accent-primary",
+        "value": "#f06e8e",
+        "usage": "Primary action, active navigation, badges, highlights, decorative geometry.",
+        "source": "observed CSS variable --accent-wallpaper fallback",
+        "confidence": "high"
+      },
+      {
+        "name": "accent-hover",
+        "value": "color-mix(in oklab, #f06e8e, #ffffff 20%)",
+        "usage": "Primary button hover and selected surface hover.",
+        "source": "observed CSS --accent-40 in light mode",
+        "confidence": "high"
+      },
+      {
+        "name": "accent-focus",
+        "value": "color-mix(in oklab, #f06e8e, #ffffff 40%)",
+        "usage": "Focus ring and soft focus halo.",
+        "source": "observed CSS --accent-30 in light mode",
+        "confidence": "high"
+      },
+      {
+        "name": "accent-pressed",
+        "value": "color-mix(in oklab, #f06e8e, #000000 10%)",
+        "usage": "Pressed state for primary controls.",
+        "source": "observed CSS --accent-60 in light mode",
+        "confidence": "high"
+      },
+      {
+        "name": "accent-soft",
+        "value": "color-mix(in oklab, #f06e8e, #ffffff 80%)",
+        "usage": "Pale decorative blocks, active mobile nav background, soft tint.",
+        "source": "observed CSS --accent-10 in light mode",
+        "confidence": "high"
+      },
+      {
+        "name": "accent-faint",
+        "value": "color-mix(in oklab, #f06e8e, #ffffff 90%)",
+        "usage": "Very subtle avatar, nav, and surface tint.",
+        "source": "observed CSS --accent-5 in light mode",
+        "confidence": "high"
+      }
+    ],
+    "neutral": [
+      {
+        "name": "background-light",
+        "value": "#ffffff",
+        "usage": "Main light canvas.",
+        "source": "observed CSS --main-bg light",
+        "confidence": "high"
+      },
+      {
+        "name": "background-dark",
+        "value": "#171414",
+        "usage": "Dark mode canvas.",
+        "source": "observed CSS --main-bg dark",
+        "confidence": "medium"
+      },
+      {
+        "name": "text-primary",
+        "value": "#212121",
+        "usage": "Primary light-mode text.",
+        "source": "observed CSS --text-color light",
+        "confidence": "high"
+      },
+      {
+        "name": "text-inverse",
+        "value": "#fafafa",
+        "usage": "Primary dark-mode text and text on dark surfaces.",
+        "source": "observed CSS --text-color dark",
+        "confidence": "medium"
+      },
+      {
+        "name": "icon-muted",
+        "value": "color-mix(in oklab, #f06e8e, #666666 93%)",
+        "usage": "Navigation icons, metadata, low-priority labels.",
+        "source": "observed CSS --icon-color via --neutral-50",
+        "confidence": "high"
+      },
+      {
+        "name": "gray-40",
+        "value": "#bdbdbd",
+        "usage": "Disabled text, neutral focus ring, dividers.",
+        "source": "observed CSS --gray-40 light",
+        "confidence": "high"
+      },
+      {
+        "name": "surface-acrylic",
+        "value": "color-mix(in oklab, #fafafa, transparent 25%)",
+        "usage": "Flyouts, modals, glass panels.",
+        "source": "observed CSS --acrylic-bg mixed with transparency",
+        "confidence": "high"
+      },
+      {
+        "name": "surface-soft",
+        "value": "color-mix(in oklab, #ffffff, transparent 25%)",
+        "usage": "Hovered card backgrounds and light panels.",
+        "source": "observed CSS --surface-color light",
+        "confidence": "high"
+      },
+      {
+        "name": "inset-bg",
+        "value": "color-mix(in oklab, #000000, transparent 98%)",
+        "usage": "Inputs, segmented tracks, pagination tracks.",
+        "source": "observed CSS --inset-bg light",
+        "confidence": "high"
+      }
+    ],
+    "state": [
+      {
+        "name": "warning",
+        "value": "#f98d00",
+        "usage": "Warning bars, warning toasts, under-construction states.",
+        "source": "observed CSS --yellow",
+        "confidence": "high"
+      },
+      {
+        "name": "success",
+        "value": "#46a12f",
+        "usage": "Success toasts, completed uploads, positive state.",
+        "source": "observed CSS --green",
+        "confidence": "high"
+      },
+      {
+        "name": "danger",
+        "value": "#dd1818",
+        "usage": "Errors, destructive actions, invalid form stripe.",
+        "source": "observed CSS --red",
+        "confidence": "high"
+      },
+      {
+        "name": "info-blue",
+        "value": "#4581e1",
+        "usage": "Optional alternate informational accent.",
+        "source": "observed CSS --blue",
+        "confidence": "high"
+      },
+      {
+        "name": "purple",
+        "value": "#b044b0",
+        "usage": "Optional category accent only, not dominant palette.",
+        "source": "observed CSS --purple",
+        "confidence": "high"
+      },
+      {
+        "name": "cyan",
+        "value": "#199bb6",
+        "usage": "Optional category accent only, not dominant palette.",
+        "source": "observed CSS --cyan",
+        "confidence": "high"
+      }
+    ]
+  },
+  "typography": {
+    "base": [
+      {
+        "name": "font-size-base",
+        "value": "14px",
+        "usage": "Default UI text, metadata, form text.",
+        "source": "observed CSS body/html font-size",
+        "confidence": "high"
+      },
+      {
+        "name": "line-height-base",
+        "value": "1.4",
+        "usage": "Default body line height.",
+        "source": "observed CSS body line-height",
+        "confidence": "high"
+      }
+    ],
+    "fontFamily": [
+      {
+        "name": "display",
+        "value": "Montserrat, Yozora Sans, -apple-system, BlinkMacSystemFont, Pretendard Std Variable, Segoe UI, Roboto Flex, Roboto, Noto Sans, Fira Sans, sans-serif",
+        "usage": "Large headings, logo-like text, numeric stats.",
+        "source": "observed CSS heading and count font stacks",
+        "confidence": "high"
+      },
+      {
+        "name": "body",
+        "value": "Yozora Sans, -apple-system, BlinkMacSystemFont, Pretendard Std Variable, Segoe UI, Roboto Flex, Roboto, Noto Sans, Fira Sans, Source Han Sans, PingFang SC, Microsoft YaHei, sans-serif",
+        "usage": "General UI text and multilingual content.",
+        "source": "observed CSS body font stacks, simplified for portability",
+        "confidence": "high"
+      },
+      {
+        "name": "mono",
+        "value": "Cascadia Code, Cascadia Mono, JetBrains Mono, Fira Code, Fira Mono, Roboto Mono, monospace",
+        "usage": "Keyboard shortcuts, code, technical labels.",
+        "source": "observed CSS kbd font stack",
+        "confidence": "high"
+      }
+    ],
+    "scale": [
+      {
+        "name": "caption",
+        "value": "12px",
+        "usage": "Metadata below media cards.",
+        "source": "observed CSS thumbnail info",
+        "confidence": "high"
+      },
+      {
+        "name": "body",
+        "value": "14px",
+        "usage": "Default UI text.",
+        "source": "observed CSS base",
+        "confidence": "high"
+      },
+      {
+        "name": "section-title",
+        "value": "16px / 700",
+        "usage": "Subheaders, info-bar titles.",
+        "source": "observed CSS Subheader and InfoBar",
+        "confidence": "high"
+      },
+      {
+        "name": "page-title",
+        "value": "40px / 900 italic or skewed",
+        "usage": "Decorative page banners.",
+        "source": "observed CSS Heading",
+        "confidence": "high"
+      },
+      {
+        "name": "stat-number",
+        "value": "36px / 700",
+        "usage": "Count cards and dashboard numbers.",
+        "source": "observed CSS upload count card",
+        "confidence": "high"
+      }
+    ]
+  },
+  "spacing": [
+    {
+      "name": "space-1",
+      "value": "4px",
+      "usage": "Micro gaps, icon-to-text gap.",
+      "source": "observed component gaps and inferred scale",
+      "confidence": "medium"
+    },
+    {
+      "name": "space-2",
+      "value": "8px",
+      "usage": "Icon gaps, card padding, nav gaps.",
+      "source": "observed component gaps",
+      "confidence": "high"
+    },
+    {
+      "name": "space-3",
+      "value": "12px",
+      "usage": "Menu padding, tag padding, input internal spacing.",
+      "source": "observed CSS menu, tag, input",
+      "confidence": "high"
+    },
+    {
+      "name": "space-4",
+      "value": "16px",
+      "usage": "Cards, mobile page padding, info bars.",
+      "source": "observed CSS content and InfoBar padding",
+      "confidence": "high"
+    },
+    {
+      "name": "space-6",
+      "value": "24px",
+      "usage": "Tablet container padding.",
+      "source": "observed CSS container tablet padding",
+      "confidence": "high"
+    },
+    {
+      "name": "desktop-container",
+      "value": "26px 5dvw",
+      "usage": "Desktop main content padding.",
+      "source": "observed CSS scroll-container layout rule",
+      "confidence": "high"
+    },
+    {
+      "name": "mobile-container",
+      "value": "16px",
+      "usage": "Mobile content padding.",
+      "source": "observed CSS container mobile padding",
+      "confidence": "high"
+    },
+    {
+      "name": "section-gap",
+      "value": "24px-48px",
+      "usage": "Vertical rhythm between main sections.",
+      "source": "inferred from screenshots and card spacing",
+      "confidence": "medium"
+    }
+  ],
+  "radius": [
+    {
+      "name": "radius-sm",
+      "value": "4px",
+      "usage": "Badges, buttons, menu items, segmented controls.",
+      "source": "observed CSS Button, Badge, MenuItem, Segmented",
+      "confidence": "high"
+    },
+    {
+      "name": "radius-md",
+      "value": "6px",
+      "usage": "Cards, thumbnails, modals, flyouts, inputs, upload zone.",
+      "source": "observed CSS cards, modal, textbox, flyout",
+      "confidence": "high"
+    },
+    {
+      "name": "radius-pill",
+      "value": "999px",
+      "usage": "Tags, tab indicators, scroll thumbs, switch tracks.",
+      "source": "observed CSS calc(infinity * 1px), normalized",
+      "confidence": "high"
+    },
+    {
+      "name": "radius-circle",
+      "value": "50%",
+      "usage": "Icon buttons, avatars, ripple containers.",
+      "source": "observed CSS soft buttons and avatars",
+      "confidence": "high"
+    }
+  ],
+  "shadow": [
+    {
+      "name": "shadow-card",
+      "value": "0 4px 8px color-mix(in oklab, var(--accent-shadow), transparent 75%), 0 0 6px color-mix(in oklab, var(--accent-shadow), transparent 90%)",
+      "usage": "Stats cards and gentle cards.",
+      "source": "observed CSS count-card",
+      "confidence": "high"
+    },
+    {
+      "name": "shadow-flyout",
+      "value": "0 8px 16px color-mix(in oklab, var(--accent-shadow), transparent 50%)",
+      "usage": "Flyouts, menus, modals.",
+      "source": "observed CSS Flyout, Menu, Modal",
+      "confidence": "high"
+    },
+    {
+      "name": "shadow-hover",
+      "value": "0 9px 9px color-mix(in oklab, var(--accent), transparent 70%)",
+      "usage": "Hovered primary controls.",
+      "source": "observed CSS Button and Segmented hover",
+      "confidence": "high"
+    },
+    {
+      "name": "shadow-focus",
+      "value": "0 0 0 3px color-mix(in oklab, var(--accent-focus), transparent 50%)",
+      "usage": "Focus ring.",
+      "source": "observed CSS Button, Tag, ToggleSwitch",
+      "confidence": "high"
+    },
+    {
+      "name": "shadow-rail",
+      "value": "0 0 24px color-mix(in oklab, var(--accent), transparent 70%)",
+      "usage": "Desktop side rail and mobile bars.",
+      "source": "observed CSS aside/nav",
+      "confidence": "high"
+    }
+  ],
+  "border": [
+    {
+      "name": "focus-ring",
+      "value": "3px solid color-mix(in oklab, var(--accent-focus), transparent 50%)",
+      "usage": "Keyboard focus for controls.",
+      "source": "observed CSS focus box-shadow",
+      "confidence": "high"
+    },
+    {
+      "name": "upload-dashed",
+      "value": "2px dashed var(--gray-60)",
+      "usage": "Dropzone outline.",
+      "source": "observed CSS upload outline",
+      "confidence": "high"
+    },
+    {
+      "name": "upload-success",
+      "value": "4px solid var(--accent)",
+      "usage": "Successful upload outline animation.",
+      "source": "observed CSS upload successful outline",
+      "confidence": "high"
+    },
+    {
+      "name": "divider-soft",
+      "value": "1px solid color-mix(in oklab, var(--divider), transparent 90%)",
+      "usage": "Menu dividers and low-contrast separators.",
+      "source": "observed CSS menu hr",
+      "confidence": "high"
+    }
+  ],
+  "motion": [
+    {
+      "name": "transition-default",
+      "value": "0.25s cubic-bezier(.19,1,.22,1)",
+      "usage": "General color, background, transform, and shadow transitions.",
+      "source": "observed CSS repeated transition rule",
+      "confidence": "high"
+    },
+    {
+      "name": "transition-fast-color",
+      "value": "0.1s cubic-bezier(.19,1,.22,1)",
+      "usage": "Text, fill, and accent-color changes.",
+      "source": "observed CSS repeated color transition",
+      "confidence": "high"
+    },
+    {
+      "name": "transition-spring",
+      "value": "0.5s cubic-bezier(.175,.885,.32,1.275)",
+      "usage": "Button, segmented, pagination, selected-thumb spring motion.",
+      "source": "observed CSS Button, Segmented, Pagination",
+      "confidence": "high"
+    },
+    {
+      "name": "transition-drawer",
+      "value": "0.6s cubic-bezier(.1,.9,.2,1)",
+      "usage": "Offcanvas, mobile modal, large panel movement.",
+      "source": "observed CSS offcanvas and modal",
+      "confidence": "high"
+    },
+    {
+      "name": "active-scale",
+      "value": "scale(.9722222222)",
+      "usage": "Pressed cards, buttons, tabs, pagination thumbs.",
+      "source": "observed CSS active states",
+      "confidence": "high"
+    },
+    {
+      "name": "card-hover-lift",
+      "value": "translateY(-6px)",
+      "usage": "Media card hover lift.",
+      "source": "observed CSS thumb video hover translate",
+      "confidence": "high"
+    },
+    {
+      "name": "acrylic-blur",
+      "value": "blur(16px)",
+      "usage": "Flyouts, modals, nav bars, hover card wrappers.",
+      "source": "observed CSS backdrop-filter",
+      "confidence": "high"
+    },
+    {
+      "name": "loading-duration",
+      "value": "2000ms",
+      "usage": "Toast progress and indeterminate progress bar loops.",
+      "source": "observed CSS toast and progress values",
+      "confidence": "medium"
+    }
+  ],
+  "breakpoint": [
+    {
+      "name": "mobile-max",
+      "value": "639px",
+      "usage": "Switch to appbar plus bottom nav and mobile padding.",
+      "source": "observed CSS @media(width<=639px)",
+      "confidence": "high"
+    },
+    {
+      "name": "tablet-min",
+      "value": "640px",
+      "usage": "Preserve side rail and medium grid.",
+      "source": "observed CSS @media(width>639px)",
+      "confidence": "high"
+    },
+    {
+      "name": "tablet-max",
+      "value": "991px",
+      "usage": "Tablet container padding and larger touch targets.",
+      "source": "observed CSS @media(width<=991px)",
+      "confidence": "high"
+    },
+    {
+      "name": "desktop-min",
+      "value": "992px",
+      "usage": "Desktop grid and desktop container rules.",
+      "source": "inferred complement to observed <=991 breakpoint",
+      "confidence": "high"
+    },
+    {
+      "name": "short-height",
+      "value": "540px-678px",
+      "usage": "Reduce side-rail logo decoration in short viewports.",
+      "source": "observed CSS height media queries",
+      "confidence": "medium"
+    }
+  ],
+  "zIndex": [
+    {
+      "name": "background",
+      "value": "0",
+      "usage": "Fixed decorative background.",
+      "source": "observed CSS background z-index",
+      "confidence": "high"
+    },
+    {
+      "name": "decoration",
+      "value": "10",
+      "usage": "Low-priority decorative fixed icons.",
+      "source": "observed CSS shading icon and spotlight values",
+      "confidence": "medium"
+    },
+    {
+      "name": "scrollbar",
+      "value": "29",
+      "usage": "Custom scrollbar layer.",
+      "source": "observed CSS scroll bar",
+      "confidence": "high"
+    },
+    {
+      "name": "navigation",
+      "value": "30",
+      "usage": "Side rail, appbar, bottom nav.",
+      "source": "observed CSS aside/nav",
+      "confidence": "high"
+    },
+    {
+      "name": "toast",
+      "value": "60",
+      "usage": "Toast stack.",
+      "source": "observed CSS toast",
+      "confidence": "high"
+    },
+    {
+      "name": "menu",
+      "value": "70",
+      "usage": "Menus and combo boxes.",
+      "source": "observed CSS menu/combo",
+      "confidence": "high"
+    },
+    {
+      "name": "tooltip",
+      "value": "80",
+      "usage": "Tooltips.",
+      "source": "observed CSS tooltip",
+      "confidence": "high"
+    },
+    {
+      "name": "drawer-mask",
+      "value": "99",
+      "usage": "Offcanvas hide mask.",
+      "source": "observed CSS hide-drawer-mask",
+      "confidence": "high"
+    }
+  ]
+}
+
